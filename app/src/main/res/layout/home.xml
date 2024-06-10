@@ -29,11 +29,9 @@
                 android:layout_height="45dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:background=""
-                android:src="@tools:sample/avatars"
-                app:shapeAppearance="@style/roundedImageView"
-                app:strokeColor=""
-                app:strokeWidth="0dp" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/cat"
+                app:shapeAppearance="@style/roundedImageView" />
 
             <TextView
                 android:id="@+id/textView"
@@ -41,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
-                android:background="@drawable/round"
+                android:background="@drawable/search_round"
                 android:gravity="center|left"
                 android:paddingStart="14dp"
                 android:paddingTop="10dp"
@@ -55,14 +53,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                app:srcCompat="@drawable/discover" />
+                android:src="@drawable/discover" />
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                app:srcCompat="@drawable/add_blue" />
+                android:src="@drawable/add_blue" />
 
         </LinearLayout>
 
@@ -95,9 +93,10 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
 
     </LinearLayout>
 
