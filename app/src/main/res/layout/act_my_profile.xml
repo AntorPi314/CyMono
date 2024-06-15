@@ -28,6 +28,7 @@
             android:layout_weight="1"/>
 
         <ImageView
+            android:id="@+id/img_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/account"/>
@@ -38,7 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginBottom="4dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/img_profile"
@@ -76,7 +78,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -114,15 +117,18 @@
 
             <Button
                 style="@style/profileOption"
-                android:text="Hidden"/>
+                android:text="General"
+                android:drawableRight="@drawable/mark"/>
 
             <Button
                 style="@style/profileOption"
-                android:text="My Access"/>
+                android:text="Hidden"
+                android:drawableRight="@drawable/unmark"/>
 
             <Button
                 style="@style/profileOption"
-                android:text="Folder"/>
+                android:text="Offline"
+                android:drawableRight="@drawable/unmark"/>
 
             <Button
                 style="@style/profileOption"
@@ -134,11 +140,16 @@
 
             <Button
                 style="@style/profileOption"
+                android:text="Tools"/>
+
+            <Button
+                style="@style/profileOption"
                 android:text="Backup and Restore"/>
 
             <Button
                 style="@style/profileOption"
-                android:text="About"/>
+                android:text="About"
+                android:layout_marginBottom="20dp"/>
 
 
         </LinearLayout>

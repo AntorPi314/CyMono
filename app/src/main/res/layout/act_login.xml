@@ -40,6 +40,7 @@
             android:text="Enter Login Code" />
 
         <EditText
+            android:id="@+id/edit_login_code"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="60dp"
@@ -48,11 +49,13 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/shape_login_edittext"
             android:gravity="center|left"
-            android:hint="Enter Code"
+            android:hint="user@gmail.com_password"
             android:paddingLeft="16dp"
+            android:textColor="#918686"
             android:textColorHint="@color/hint_color" />
 
         <ImageView
+            android:id="@+id/img_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/next"
