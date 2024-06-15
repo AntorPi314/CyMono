@@ -37,7 +37,7 @@
             android:padding="8dp"
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:text="Enter Login Code" />
+            android:text="Enter Verification Code" />
 
         <EditText
             android:layout_width="match_parent"
@@ -55,7 +55,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/next"
+            android:src="@drawable/next_red"
             android:padding="12dp"/>
 
 
