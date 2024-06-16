@@ -147,6 +147,7 @@
                 android:text="Backup and Restore"/>
 
             <Button
+                android:id="@+id/but_theme"
                 style="@style/profileOption"
                 android:text="About"
                 android:layout_marginBottom="20dp"/>

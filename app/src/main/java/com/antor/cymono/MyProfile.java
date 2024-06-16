@@ -23,6 +23,7 @@ public class MyProfile extends AppCompatActivity {
 
     private ImageView img_account;
     public Context context;
+    private Button but_theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MyProfile extends AppCompatActivity {
         setContentView(R.layout.act_my_profile);
 
         img_account = findViewById(R.id.img_account);
+        but_theme = findViewById(R.id.but_theme);
 
         img_account.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +46,13 @@ public class MyProfile extends AppCompatActivity {
                 } else {
                     showLogoutDialog();
                 }
+            }
+        });
+        but_theme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Theme.class);
+                startActivity(intent);
             }
         });
 
