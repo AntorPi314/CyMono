@@ -20,7 +20,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back"/>
+            android:src="@drawable/back"
+            android:onClick="clickFinish"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,8 +50,8 @@
 
             <Button
                 style="@style/profileOption"
-                android:text="Material Dark (Default)"
-                android:drawableRight="@drawable/mark"/>
+                android:drawableRight="@drawable/mark"
+                android:text="Material Dark (Default)" />
 
         </LinearLayout>
 

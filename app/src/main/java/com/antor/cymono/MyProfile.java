@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MyProfile extends AppCompatActivity {
-
     private ImageView img_account;
     public Context context;
     private Button but_theme;
@@ -32,30 +31,6 @@ public class MyProfile extends AppCompatActivity {
         context = getApplicationContext();
         setContentView(R.layout.act_my_profile);
 
-        img_account = findViewById(R.id.img_account);
-        but_theme = findViewById(R.id.but_theme);
-
-        img_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth auth = FirebaseAuth.getInstance();
-                FirebaseUser currentUser = auth.getCurrentUser();
-                if (currentUser == null) {
-                    Intent intent = new Intent(context, Login.class);
-                    startActivity(intent);
-                } else {
-                    showLogoutDialog();
-                }
-            }
-        });
-        but_theme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Theme.class);
-                startActivity(intent);
-            }
-        });
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -63,6 +38,27 @@ public class MyProfile extends AppCompatActivity {
         });
     }
 
+    public void clickAccount(View view) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = auth.getCurrentUser();
+        if (currentUser == null) {
+            Intent intent = new Intent(context, Login.class);
+            startActivity(intent);
+        } else {
+            showLogoutDialog();
+        }
+    }
+    public void clickMyAccess(View view) {
+        Intent intent = new Intent(this, MyAccess.class);
+        startActivity(intent);
+    }
+    public void clickTheme(View view) {
+        Intent intent = new Intent(this, Theme.class);
+        startActivity(intent);
+    }
+    public void clickFinish(View view){
+        finish();
+    }
     private void showLogoutDialog() {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.cust_dia_logout);
