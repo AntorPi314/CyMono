@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
+        android:padding="8dp"
         android:layout_marginBottom="4dp">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -47,7 +48,7 @@
             android:layout_marginRight="12dp"
             android:layout_marginBottom="12dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/cat"
+            android:src="@drawable/a"
             app:shapeAppearance="@style/roundedImageView" />
 
         <TextView
