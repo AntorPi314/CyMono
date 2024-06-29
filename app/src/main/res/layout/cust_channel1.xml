@@ -11,13 +11,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="8dp"
-        android:background="@drawable/post_shape" >
+        android:background="@drawable/shape_post" >
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center|left">
+            android:gravity="center|left"
+            android:orientation="horizontal">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/img_profile"
@@ -31,30 +32,32 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:text="Antor" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center|left">
+                    android:gravity="center|left"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="54 Liked  |  08:20 PM"
-                        />
+                        android:textColor="@color/post1_info"
+                        android:text="54 Liked  |  08:20 PM" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
-                        android:src="@drawable/pin"/>
+                        android:src="@drawable/pin" />
 
                 </LinearLayout>
 
@@ -64,15 +67,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:src="@drawable/liked"/>
+                android:src="@drawable/liked" />
 
         </LinearLayout>
-
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="12dp"
+            android:textColor="@color/post1_text"
             android:text="The BroadcastChannel interface represents a named channel that any browsing context of a given origin can subscribe to."
             />
 
@@ -114,6 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:alpha="0.5"
                     android:scaleType="centerCrop"
                     android:src="@drawable/cat"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -128,6 +132,7 @@
                     android:textColor="#fff"
                     android:textSize="30dp"
                     android:textStyle="bold"
+                    android:alpha="0.8"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
