@@ -6,33 +6,48 @@ public class ItemHome {
     String email;
     int image;
 
-    public ItemHome(String name, String email, int image) {
-        this.name = name;
-        this.email = email;
-        this.image = image;
+    String channelName;
+    String channelDes;
+    String channelTime;
+    String imageURL;
+
+    public ItemHome(String channelName, String channelDes, String channelTime, String imageURL) {
+        this.channelName = channelName;
+        this.channelDes = channelDes;
+        this.channelTime = channelTime;
+        this.imageURL = imageURL;
     }
 
-    public String getName() {
-        return name;
+    public String getChannelName() {
+        return channelName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getChannelDes() {
+        return channelDes;
     }
 
-    public String getEmail() {
-        return email;
+    public String getChannelTime() {
+        return channelTime;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getImageURL() {
+        return imageURL;
     }
 
-    public int getImage() {
-        return image;
+    public void setChannelName(String channelName) {
+        this.channelName = channelName;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setChannelDes(String channelDes) {
+        this.channelDes = channelDes;
     }
+
+    public void setChannelTime(String channelTime) {
+        this.channelTime = channelTime;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
 }

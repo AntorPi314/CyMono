@@ -28,12 +28,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/channel_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Channel Name"
                 android:textColor="#ECD7D7" />
 
             <TextView
+                android:id="@+id/channel_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Channel Description"
@@ -54,6 +56,7 @@
                 android:src="@drawable/pin" />
 
             <TextView
+                android:id="@+id/channel_time"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
