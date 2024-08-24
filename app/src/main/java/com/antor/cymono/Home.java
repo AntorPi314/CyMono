@@ -40,8 +40,7 @@ public class Home extends AppCompatActivity {
         img_profile = findViewById(R.id.img_profile);
 
 
-        String imageUrl = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFnxl6rIhpbPDFOkABOORcHdwJVi-L6YCz8defbTKWVMHKn3ApopP6JuHqzYbOkRDcyc7klHYPw2Q0Xbs2w1QbxD0AlAsMyh1IDAi4dRs5p8ZQvuXoTic0v_kk1DwpcpJe-6PfAB81BU0/w640-h556/android_notification_load_image_url_setlargeicon_bigPicture_02.png";
-        Glide.with(this).load(imageUrl).into(img_profile);
+        Glide.with(this).load("https://avatars.githubusercontent.com/u/123496530?v=4").into(img_profile);
 
 
 

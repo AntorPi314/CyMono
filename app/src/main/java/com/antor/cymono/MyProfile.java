@@ -16,11 +16,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MyProfile extends AppCompatActivity {
-    private ImageView img_account;
+    private ImageView img_account, img_profile;
     public Context context;
     private Button but_theme;
 
@@ -30,6 +31,12 @@ public class MyProfile extends AppCompatActivity {
         EdgeToEdge.enable(this);
         context = getApplicationContext();
         setContentView(R.layout.act_my_profile);
+
+        img_account = findViewById(R.id.img_account);
+        img_profile = findViewById(R.id.img_profile);
+        but_theme = findViewById(R.id.but_theme);
+
+        Glide.with(this).load("https://avatars.githubusercontent.com/u/123496530?v=4").into(img_profile);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
