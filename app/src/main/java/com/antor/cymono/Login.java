@@ -1,9 +1,11 @@
 package com.antor.cymono;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -30,6 +32,11 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.act_login);
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        Window window = this.getWindow();
+        window.setStatusBarColor(Color.parseColor("#2A2E37"));
+        window.setNavigationBarColor(Color.parseColor("#2A2E37"));
 
         img_next = findViewById(R.id.img_next);
         edit_login_code = findViewById(R.id.edit_login_code);
@@ -88,6 +95,10 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public void clickFinish(View view){
+        finish();
     }
 
 }
