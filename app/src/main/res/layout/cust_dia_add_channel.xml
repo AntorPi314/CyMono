@@ -5,11 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <!-- Channel Code Input -->
     <EditText
         android:id="@+id/editTextChannelCode"
-        android:hint="Enter Channel Code"
+        android:hint="Enter your Channel Code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text" />
+        android:inputType="text"
+        android:padding="8dp" />
 
+    <!-- Buttons layout -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:layout_marginTop="16dp">
+
+        <!-- Add Button -->
+        <Button
+            android:id="@+id/btnAddChannel"
+            android:text="Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp" />
+
+        <!-- Cancel Button -->
+        <Button
+            android:id="@+id/btnCancel"
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:padding="8dp" />
+    </LinearLayout>
 </LinearLayout>
