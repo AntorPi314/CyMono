@@ -73,7 +73,6 @@ public class Home extends AppCompatActivity {
         items.add(new ItemHome("Bengal Tiger", "A page dedicated to the majestic Bengal tiger", "10:00 AM", "https://media.4-paws.org/d/b/0/5/db05d79a7b3002447904b841871363190b45b74d/VIER%20PFOTEN_2017-10-20_164-3854x2667-1920x1329.webp"));
         items.add(new ItemHome("Wallpaper", "A collection of stunning wallpapers from around the world", "10:00 AM", "https://images.pexels.com/photos/19550021/pexels-photo-19550021/free-photo-of-rocky-peak-of-a-snow-covered-mountain-in-the-french-pyrenees.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"));
         items.add(new ItemHome("Bangladesh Cricket", "A passionate community for fans of Bangladesh cricket", "10:00 AM", "https://businessinspection.com.bd/wp-content/uploads/2022/03/How-Bangladesh-Cricket-Board-Makes-Money-1.jpg"));
-        items.add(new ItemHome("Foods Only", "A delightful space for food lovers, showcasing the best recipes", "10:00 AM", "https://www.eatright.org/-/media/images/eatright-landing-pages/foodgroupslp_804x482.jpg?as=0&w=967&rev=d0d1ce321d944bbe82024fff81c938e7&hash=E6474C8EFC5BE5F0DA9C32D4A797D10D"));
 
 
         for (int i = 1; i < 10; i++) {

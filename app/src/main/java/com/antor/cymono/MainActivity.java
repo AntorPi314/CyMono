@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(MainActivity.this, Home.class);
+        Intent intent = new Intent(MainActivity.this, Channel1.class);
         startActivity(intent);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);

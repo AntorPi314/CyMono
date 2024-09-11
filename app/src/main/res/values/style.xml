@@ -9,7 +9,7 @@
 
     <style name="roundedImageView">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">20%</item>
+        <item name="cornerSize">8%</item>
     </style>
     <style name="circleImageView">
         <item name="cornerFamily">rounded</item>
