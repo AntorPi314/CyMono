@@ -1,21 +1,22 @@
 package com.antor.cymono.RecyclerView;
 
 public class ItemHome {
-
-    String name;
-    String email;
-    int image;
-
+    String channelPath;
     String channelName;
     String channelDes;
     String channelTime;
     String imageURL;
 
-    public ItemHome(String channelName, String channelDes, String channelTime, String imageURL) {
+    public ItemHome(String channelPath, String channelName, String channelDes, String channelTime, String imageURL) {
+        this.channelPath = channelPath;
         this.channelName = channelName;
         this.channelDes = channelDes;
         this.channelTime = channelTime;
         this.imageURL = imageURL;
+    }
+
+    public String getChannelPath() {
+        return channelPath;
     }
 
     public String getChannelName() {
@@ -32,6 +33,10 @@ public class ItemHome {
 
     public String getImageURL() {
         return imageURL;
+    }
+
+    public void setChannelPath(String channelPath) {
+        this.channelPath = channelPath;
     }
 
     public void setChannelName(String channelName) {

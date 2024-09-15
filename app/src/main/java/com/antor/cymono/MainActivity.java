@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(MainActivity.this, Channel1.class);
+        Intent intent = new Intent(MainActivity.this, Home.class);
         startActivity(intent);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(new MyAdapter(getApplicationContext(),items));
 
 
-        DatabaseReference myRef = database.getReference("message");
+        DatabaseReference myRef = database.getReference("apps/about");
 
         // myRef.setValue("Hello, World!");
 
@@ -71,11 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 String value = dataSnapshot.getValue(String.class);
                 Toast.makeText(MainActivity.this, value, Toast.LENGTH_SHORT).show();
             }
-
             @Override
-            public void onCancelled(DatabaseError error) {
-
-            }
+            public void onCancelled(DatabaseError error) {}
         });
 
 

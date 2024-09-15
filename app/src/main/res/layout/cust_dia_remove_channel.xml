@@ -10,7 +10,7 @@
         android:id="@+id/tv_dialog_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Are you sure you want to LogOut?"
+        android:text="Are you sure you want to remove this Channel from list?"
         android:textSize="18sp"
         android:gravity="center"
         android:textColor="#EAE3E3"
@@ -29,10 +29,11 @@
             android:text="Cancel"/>
 
         <Button
-            android:id="@+id/btn_logout"
+            android:id="@+id/btn_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logout"
+            android:text="Delete"
+            android:backgroundTint="#BC2323"
             android:layout_marginLeft="16dp"/>
     </LinearLayout>
 </LinearLayout>

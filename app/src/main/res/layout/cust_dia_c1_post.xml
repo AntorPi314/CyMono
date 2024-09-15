@@ -8,24 +8,39 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add New Channel"
+        android:text="Create a new post"
         android:textColor="#B6AAAA"
         android:textSize="22dp" />
 
     <EditText
-        android:id="@+id/edit_channel_code"
+        android:id="@+id/et_post_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_post"
+        android:gravity="top"
+        android:hint="What's on your mind?"
+        android:minHeight="120dp"
+        android:padding="16dp"
+        android:textColor="#DADBE3"
+        android:textColorHint="#706161"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:id="@+id/txt_img_link"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/shape_post"
         android:gravity="top"
-        android:hint="Enter Channel Code"
+        android:hint="Paste your Image link here"
         android:minHeight="120dp"
         android:padding="16dp"
-        android:singleLine="true"
-        android:textColor="#DADBE3"
+        android:textColor="#5D6AD1"
         android:textColorHint="#706161"
         android:textSize="16sp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,11 +56,11 @@
             android:text="Cancel" />
 
         <Button
-            android:id="@+id/btn_add"
+            android:id="@+id/btn_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Add" />
+            android:text="Post" />
     </LinearLayout>
 
 

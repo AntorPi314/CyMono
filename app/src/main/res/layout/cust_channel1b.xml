@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:paddingBottom="6dp"
+        android:paddingStart="6dp"
         android:background="@drawable/shape_post"
         android:orientation="vertical">
 
@@ -26,7 +28,7 @@
                 android:layout_height="50dp"
                 android:layout_margin="12dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cat"
+                android:src="@drawable/icon"
                 app:shapeAppearance="@style/circleImageView" />
 
             <LinearLayout
@@ -66,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
                 android:padding="8dp"
-                android:src="@drawable/liked" />
+                android:src="@drawable/mark" />
 
         </LinearLayout>
 
@@ -74,9 +76,17 @@
             android:id="@+id/txt_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:text="The BroadcastChannel interface represents a named channel that any browsing context of a given origin can subscribe to."
-            android:textColor="@color/post1_text" />
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:textColorLink="#0000FF"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:text="https://www.goggle.com \nThe BroadcastChannel interface represents a named channel that any browsing context of a given origin can subscribe to."
+            android:textColor="@color/post1_text"
+            android:textIsSelectable="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
 
         <LinearLayout
             android:id="@+id/linear_img"
@@ -93,7 +103,7 @@
                 android:layout_marginRight="6dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cat"
+                android:src="@drawable/icon"
                 app:shapeAppearance="@style/roundedImageView" />
 
 

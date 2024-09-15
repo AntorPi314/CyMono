@@ -1,6 +1,8 @@
 package com.antor.cymono;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,10 +24,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
+    Context context = this;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    SharedPreferences sp;
+
     private ImageView img_next;
-    private EditText edit_login_code;
+    private EditText edit_email, edit_pass;
+    String email, pass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +41,16 @@ public class Login extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.act_login);
 
+        sp = context.getSharedPreferences("userdata", Context.MODE_PRIVATE);
+
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         Window window = this.getWindow();
         window.setStatusBarColor(Color.parseColor("#2A2E37"));
         window.setNavigationBarColor(Color.parseColor("#2A2E37"));
 
         img_next = findViewById(R.id.img_next);
-        edit_login_code = findViewById(R.id.edit_login_code);
+        edit_email = findViewById(R.id.edit_email);
+        edit_pass = findViewById(R.id.edit_pass);
 
         img_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +58,6 @@ public class Login extends AppCompatActivity {
                 loginUser();
             }
         });
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -56,40 +66,24 @@ public class Login extends AppCompatActivity {
     }
 
     private void loginUser() {
-        String loginCode = edit_login_code.getText().toString().trim();
+        email = edit_email.getText().toString().trim();
+        pass = edit_pass.getText().toString().trim();
 
-        if (TextUtils.isEmpty(loginCode)) {
-            Toast.makeText(getApplicationContext(), "Enter login code!", Toast.LENGTH_SHORT).show();
+        if (email == "" || pass == "") {
+            Toast.makeText(getApplicationContext(), "Field Not be Empty!", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        String[] credentials = loginCode.split("_");
-        if (credentials.length != 2) {
-            Toast.makeText(getApplicationContext(), "Invalid format! Use: user@gmail.com_password", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        String email = credentials[0];
-        String password = credentials[1];
-
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
+        //Toast.makeText(this, email + " " + pass, Toast.LENGTH_SHORT).show();
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.signInWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            finish();
                             FirebaseUser currentUser = auth.getCurrentUser();
+                            fetchPublicAddress();
+                            SharedPreferences.Editor editor = sp.edit();
+                            editor.putBoolean("login", true).apply();
                         } else {
                             Toast.makeText(Login.this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
@@ -97,8 +91,41 @@ public class Login extends AppCompatActivity {
                 });
     }
 
-    public void clickFinish(View view){
-        finish();
+    public void fetchPublicAddress() {
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        db.collection("userprivate").document(uid).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        String publicAddress = documentSnapshot.getString("public");
+                        if (publicAddress != null) {
+                            SharedPreferences.Editor editor = sp.edit();
+                            editor.putString("publicAddress", publicAddress).apply();
+                            fetchPublicData(publicAddress);
+                        }
+                    }
+                });
     }
 
+    public void fetchPublicData(String publicAddress) {
+        db.collection("user").document(publicAddress).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        String name = documentSnapshot.getString("name");
+                        String bio = documentSnapshot.getString("bio");
+                        String profile_pic = documentSnapshot.getString("profile_pic");
+
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString("name", name).apply();
+                        editor.putString("bio", bio).apply();
+                        editor.putString("profile_pic", profile_pic).apply();
+                        Toast.makeText(context, "Welcome! " + name, Toast.LENGTH_SHORT).show();
+                        finish();
+                        //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    public void clickFinish(View view) {
+        finish();
+    }
 }

@@ -44,10 +44,10 @@
             android:padding="8dp"
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:text="Enter Login Code" />
+            android:text="Enter Login Info" />
 
         <EditText
-            android:id="@+id/edit_login_code"
+            android:id="@+id/edit_email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="60dp"
@@ -56,7 +56,22 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/shape_login_edittext"
             android:gravity="center|left"
-            android:hint="user@gmail.com_password"
+            android:hint="Email"
+            android:paddingLeft="16dp"
+            android:textColor="#918686"
+            android:textColorHint="@color/hint_color" />
+
+        <EditText
+            android:id="@+id/edit_pass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/shape_login_edittext"
+            android:gravity="center|left"
+            android:hint="Password"
             android:paddingLeft="16dp"
             android:textColor="#918686"
             android:textColorHint="@color/hint_color" />

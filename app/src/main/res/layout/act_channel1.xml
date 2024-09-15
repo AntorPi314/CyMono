@@ -11,21 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center|left"
-        android:padding="8dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back"/>
+            android:layout_marginStart="6dp"
+            android:src="@drawable/back"
+            android:onClick="clickFinish"/>
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/img_profile"
+            android:id="@+id/profile_pic"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="12dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/cat"
+            android:src="@drawable/icon"
             app:shapeAppearance="@style/circleImageView" />
 
         <LinearLayout
@@ -35,29 +39,39 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/channel_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Channel Name"
+                android:text="Unknown..."
                 android:textColor="#ECD7D7" />
 
             <TextView
+                android:id="@+id/channel_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#908A8A"
-                android:text="2.5K Joined  |  Last 23 views" />
+                android:text="Unknown..."
+                android:textColor="#908A8A" />
 
         </LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/add_green"/>
+            android:onClick="OnClickAddNewPost"
+            android:src="@drawable/add_green" />
 
     </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_channel1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>

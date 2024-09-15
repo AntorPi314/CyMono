@@ -8,22 +8,36 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add New Channel"
+        android:text="Edit post"
         android:textColor="#B6AAAA"
         android:textSize="22dp" />
 
     <EditText
-        android:id="@+id/edit_channel_code"
+        android:id="@+id/et_post_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_post"
+        android:gravity="top"
+        android:hint="What's on your mind?"
+        android:minHeight="120dp"
+        android:padding="16dp"
+        android:textColor="#DADBE3"
+        android:textColorHint="#706161"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:id="@+id/txt_img_link"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/shape_post"
         android:gravity="top"
-        android:hint="Enter Channel Code"
+        android:hint="Paste your Image link here"
         android:minHeight="120dp"
         android:padding="16dp"
-        android:singleLine="true"
-        android:textColor="#DADBE3"
+        android:textColor="#5D6AD1"
         android:textColorHint="#706161"
         android:textSize="16sp" />
 
@@ -35,17 +49,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_cancel"
+            android:id="@+id/btn_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel" />
+            android:backgroundTint="#C30F0F"
+            android:text="Delete" />
 
         <Button
-            android:id="@+id/btn_add"
+            android:id="@+id/btn_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Add" />
+            android:backgroundTint="#34A638"
+            android:text="Update" />
     </LinearLayout>
 
 

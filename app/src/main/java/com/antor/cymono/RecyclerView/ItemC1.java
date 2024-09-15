@@ -2,22 +2,21 @@ package com.antor.cymono.RecyclerView;
 
 public class ItemC1 {
 
-    String img_profile;
-    String txt_name;
-    String txt_info;
-    String tet_post;
-    String img1;
+    String postId, img_profile, txt_name, txt_info, tet_post, img1;
 
     public ItemC1() {
     }
 
-    public ItemC1(String img_profile, String txt_name, String txt_info, String tet_post, String img1) {
+    public ItemC1(String postId, String img_profile, String txt_name, String txt_info, String tet_post, String img1) {
+        this.postId = postId;
         this.img_profile = img_profile;
         this.txt_name = txt_name;
         this.txt_info = txt_info;
         this.tet_post = tet_post;
         this.img1 = img1;
     }
+
+    public String getPostId() {return postId;}
 
     public String getImg_profile() {
         return img_profile;
@@ -37,6 +36,10 @@ public class ItemC1 {
 
     public String getImg1() {
         return img1;
+    }
+
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 
     public void setImg_profile(String img_profile) {
