@@ -75,6 +75,7 @@ public class Channel1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.act_channel1);
+        UIUtils.setStatusBarAndNavigationBar(this);
 
         sp = context.getSharedPreferences("userdata", Context.MODE_PRIVATE);
         intent = getIntent();

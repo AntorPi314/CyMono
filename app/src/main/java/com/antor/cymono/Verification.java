@@ -15,7 +15,7 @@ public class Verification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.act_verifiation);
-
+        UIUtils.setStatusBarAndNavigationBar(this);
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

@@ -1,6 +1,8 @@
 package com.antor.cymono.RecyclerView;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.Log;
@@ -16,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.antor.cymono.Channel1;
+import com.antor.cymono.ImageViewer;
 import com.antor.cymono.R;
 import com.bumptech.glide.Glide;
 
@@ -29,7 +32,6 @@ public class AdapterC1 extends RecyclerView.Adapter<ViewHolderC1> {
     Channel1 C1;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
 
     public AdapterC1(Channel1 C1, Context context, List<ItemC1> items) {
         this.C1 = C1;
@@ -46,8 +48,9 @@ public class AdapterC1 extends RecyclerView.Adapter<ViewHolderC1> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolderC1 holder, int position) {
         ItemC1 item = items.get(position);
-       // holder.txt_name.setAutoLinkMask(Linkify.WEB_URLS);
-        // holder.txt_name.setMovementMethod(LinkMovementMethod.getInstance());
+        holder.txt_name.setTextIsSelectable(true);
+        holder.txt_name.setAutoLinkMask(Linkify.WEB_URLS);
+        holder.txt_name.setMovementMethod(LinkMovementMethod.getInstance());
         Glide.with(context).load(items.get(position).getImg_profile()).into(holder.img_profile);
         holder.txt_name.setText(items.get(position).getTxt_name());
         holder.txt_info.setText(items.get(position).getTxt_info());
@@ -62,18 +65,20 @@ public class AdapterC1 extends RecyclerView.Adapter<ViewHolderC1> {
         holder.itemView.setOnLongClickListener(v -> {
             Log.d("AdapterC1", "Long click on item at position: " + position);
             C1.showEditPostDialog(items.get(position).getPostId(), items.get(position).getTet_post(), items.get(position).getImg1());
-
-            //Toast.makeText(context, items.get(position).getPostId(), Toast.LENGTH_SHORT).show();
-
             return true;
         });
 
-    }
+        holder.linear_img.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ImageViewer.class);
+            intent.putExtra("image_url", items.get(position).getImg1());
+            C1.startActivity(intent);
+        });
+}
 
-    @Override
-    public int getItemCount() {
-        return items.size();
-    }
+@Override
+public int getItemCount() {
+    return items.size();
+}
 
 
 }

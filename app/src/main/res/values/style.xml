@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/master_bg</item>
-        <item name="android:navigationBarColor">@color/master_bg</item>
-        <item name="android:windowLightStatusBar">true</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:statusBarColor">#2A2E37</item>
+        <item name="android:navigationBarColor">#2A2E37</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="roundedImageView">

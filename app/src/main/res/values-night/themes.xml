@@ -3,6 +3,7 @@
     <style name="Base.Theme.CyMono" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <item name="android:statusBarColor">@color/master_bg</item>
+        <item name="android:navigationBarColor">@color/master_bg</item>
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>

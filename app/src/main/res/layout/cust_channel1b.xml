@@ -82,11 +82,11 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:paddingBottom="8dp"
-            android:text="https://www.goggle.com \nThe BroadcastChannel interface represents a named channel that any browsing context of a given origin can subscribe to."
+            android:text="https://www.google.com \nThe BroadcastChannel interface represents a named channel that any browsing context of a given origin can subscribe to."
             android:textColor="@color/post1_text"
             android:textIsSelectable="true"
-            android:focusable="false"
-            android:focusableInTouchMode="false"/>
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <LinearLayout
             android:id="@+id/linear_img"

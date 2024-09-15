@@ -54,13 +54,14 @@
                 android:id="@+id/txt_about"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:justificationMode="inter_word"
                 android:layout_marginTop="10dp"
                 android:text="Loading..."
-                android:textColor="#A89292"
+                android:textColor="#EDE8E8"
+                android:autoLink="web"
                 android:linksClickable="true"
-                android:textColorLink="#0000FF"/>
+                android:textColorLink="#1D87DC"/>
 
         </LinearLayout>
 
